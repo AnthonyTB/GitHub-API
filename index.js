@@ -29,7 +29,7 @@ function formatResponse(data) {
 function renderResponse(name, html_url, date_created, description) {
   if (description === null) {
     let template = `
-      <h2><a href="${html_url}">${name}</a></h2>
+      <h2><i class="fas fa-caret-right"></i><a href="${html_url}">${name}</a></h2>
       <ul>
         <li>No Description for this repo</li>
         <li>
@@ -41,7 +41,7 @@ function renderResponse(name, html_url, date_created, description) {
   }
   else {
     let template = `
-      <h2><a href="${html_url}">${name}</a></h2>
+      <h2><i class="fas fa-caret-right"></i><a href="${html_url}">${name}</a></h2>
       <ul>
         <li>Description: ${description}</li>
         <li>
