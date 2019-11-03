@@ -12,7 +12,12 @@ function handleUserSearch() {
 
 function apiCall(userName) {
   fetch(`https://api.github.com/users/${userName}/repos`)
-    .then(response => response.json())
+    .then(response => {
+      if (response.ok) {
+        return response.json();
+      }
+      throw new Error('error with API call');
+    })
     .then(responseJson => formatResponse(responseJson))
     .catch(error => alert('API Failure'));
 }
